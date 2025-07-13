@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class DataBase : BasicSingleton<DataBase>
 {
-    private PlayerData _playerData = new();
-    private InitialData _initialData = new();
+    private PlayerData _playerData;
+    private InitialData _initialData;
     private Dictionary<int, HeroData> heroDict = new Dictionary<int, HeroData>();
 
     private void Awake()
     {
         //UnityGoogleSheet.LoadAllData();
         // 영웅 데이터 로드 및 Dictionary에 삽입
+
+        _initialData = GetComponent<InitialData>();
         LoadAllHeroData();
     }
 

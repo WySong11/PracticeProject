@@ -13,7 +13,7 @@ public class InitialData : MonoBehaviour
     public float AttackSpeed;
     public float AttackRange;
 
-    public InitialData()
+    void Awake()
     {
         LoadData();
     }
