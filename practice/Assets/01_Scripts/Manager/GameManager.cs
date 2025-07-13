@@ -39,6 +39,12 @@ public class GameManager : BasicSingleton<GameManager>
         bgmSound.Play();
 
         dataLoadComplete = true;
+
+        if(DataLoadEvent == null)
+        {
+            Debug.LogError("DataLoadEvent is not assigned in GameManager.");
+            return;
+        }
         DataLoadEvent.RaiseEvent();
 	}
 

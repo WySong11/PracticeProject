@@ -20,6 +20,12 @@ public class InitialData : MonoBehaviour
 
     private void LoadData()
     {
+        if( DataTable.시작값.시작값List.Count == 0 )
+        {
+            Debug.LogError("InitialData: No initial data found in DataTable.");
+            return;
+        }
+
         GamePlayingSpeed = DataTable.시작값.시작값List[0].게임진행속도;
         StartAttack = DataTable.시작값.시작값List[0].기본_공격력;
         StartHealth = DataTable.시작값.시작값List[0].기본_체력;
